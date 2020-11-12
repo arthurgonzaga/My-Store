@@ -1,20 +1,21 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
 
-import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductsAlertComponent } from './products-alert/products-alert.component';
-import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { AppComponent } from "./app.component";
+import { TopBarComponent } from "./top-bar/top-bar.component";
+import { ProductListComponent } from "./product-list/product-list.component";
+import { ProductsAlertComponent } from "./products-alert/products-alert.component";
+import { ProductDetailComponent } from "./product-detail/product-detail.component";
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
+      { path: "", component: ProductListComponent },
+      { path: "products/:productId", component: ProductDetailComponent }
     ])
   ],
   declarations: [
@@ -24,10 +25,9 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     ProductsAlertComponent,
     ProductDetailComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
-export class AppModule { }
-
+export class AppModule {}
 
 /*
 Copyright Google LLC. All Rights Reserved.
